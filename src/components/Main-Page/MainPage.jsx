@@ -8,9 +8,20 @@ import eclipse04 from "../../assets/main-page/Ellipse 4.png";
 function MainPage() {
   return (
     <div className="bg-[#000000] h-screen flex items-center justify-center">
-      <div className="bg-[#202020] container relative pb-20">
+      <div className="bg-[#202020] container relative pb-20 pt-20">
         <p className="text-[#fff] text-[64px] inter-font font-extrabold mb-2">
-          Create more MEME in less time
+          Create more
+          <span
+            style={{
+              background: "linear-gradient(to right, #bf2d8e, #3362f0)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+            className="text-[64px] inter-font font-extrabold px-3"
+          >
+            MEME
+          </span>
+          in less time
         </p>
         <p className="text-[#fff] text-[20px] inter-font font-normal mb-12">
           Create and share memes instantly with MemeMaster! Choose from
@@ -42,10 +53,18 @@ function MainPage() {
             <div className="relative">
               <img src={mainImage} alt="main image" className="w-[850px]" />
 
-              <div className="bg-gradient-to-r from-[#cf2786] to-[#3b3cc9] w-max rounded-[5px] px-8 py-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <p className="inter-font text-[20px] font-extrabold text-[#fff]">
-                  Connect Wallet
-                </p>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                {" "}
+                <div className="bg-gradient-to-r from-[#cf2786] to-[#3b3cc9] w-max rounded-[5px] px-8 py-1  cursor-pointer">
+                  <p className="inter-font text-[20px] font-extrabold text-[#fff]">
+                    Connect Wallet
+                  </p>
+                </div>
+                <div>
+                  <p className="text-white text-[16px] font-normal pt-2">
+                    Create and Share Memes
+                  </p>
+                </div>
               </div>
             </div>
           </div>
