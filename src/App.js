@@ -1,10 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
+import MainPage from "./components/Main-Page/MainPage";
 
 function App() {
   return (
     <div className="App">
-      <p className="text-[55px] text-[#2f2fdf]">Hello how are you?</p>
+      <MainPage />
     </div>
   );
 }
