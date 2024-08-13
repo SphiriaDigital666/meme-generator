@@ -14,30 +14,41 @@ function MainPage() {
         </p>
         <p className="text-[#fff] text-[20px] inter-font font-normal mb-12">
           Create and share memes instantly with MemeMaster! Choose from
-          templates or upload your own images. <br></br> Perfect for beginners
-          and pros. Start creating and join the meme revolution!
+          templates or upload your own images. <br /> Perfect for beginners and
+          pros. Start creating and join the meme revolution!
         </p>
 
         {/* eclipse vectors */}
 
         <div className="absolute top-[40px] right-0">
-          <img src={eclipse01} alt="main image" className="w-[140px]" />
+          <img src={eclipse01} alt="eclipse01 image" className="w-[140px]" />
         </div>
 
         <div className="absolute bottom-[330px] right-[282px]">
-          <img src={eclipse03} alt="main image" className="w-[60px]" />
+          <img src={eclipse03} alt="eclipse03 image" className="w-[60px]" />
         </div>
 
         <div className="absolute top-[60px] left-0">
-          <img src={eclipse03} alt="main image" className="w-[60px]" />
+          <img src={eclipse03} alt="eclipse03 image" className="w-[60px]" />
         </div>
 
-        <div className="absolute bottom-0 left-[233px]">
-          <img src={eclipse04} alt="main image" className="w-[200px]" />
-        </div>
+        {/* Parent container for mainImage and eclipse04 */}
+        <div className="relative flex items-center justify-center">
+          <div className="absolute bottom-[-80px] left-[213px] z-0">
+            <img src={eclipse04} alt="eclipse04 image" className="w-[200px]" />
+          </div>
 
-        <div className="flex items-center justify-center">
-          <img src={mainImage} alt="main image" className="w-[850px]" />
+          <div className="z-10">
+            <div className="relative">
+              <img src={mainImage} alt="main image" className="w-[850px]" />
+
+              <div className="bg-gradient-to-r from-[#cf2786] to-[#3b3cc9] w-max rounded-[5px] px-8 py-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <p className="inter-font text-[20px] font-extrabold text-[#fff]">
+                  Connect Wallet
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
