@@ -8,7 +8,7 @@ import eclipse04 from "../../assets/main-page/Ellipse 4.png";
 function MainPage() {
   return (
     <div className="bg-[#000000] h-screen flex items-center justify-center">
-      <div className="bg-[#202020] container relative">
+      <div className="bg-[#202020] container relative pb-20">
         <p className="text-[#fff] text-[64px] inter-font font-extrabold mb-2">
           Create more MEME in less time
         </p>
@@ -20,21 +20,21 @@ function MainPage() {
 
         {/* eclipse vectors */}
 
-        {/* <div className="absolute ">
-          <img src={eclipse01} alt="main image" />
-        </div> */}
+        <div className="absolute top-[40px] right-0">
+          <img src={eclipse01} alt="main image" className="w-[140px]" />
+        </div>
 
-        {/* <div className="absolute top-[554px] left-[1453px]">
-          <img src={eclipse02} alt="main image" />
-        </div> */}
+        <div className="absolute bottom-[330px] right-[282px]">
+          <img src={eclipse03} alt="main image" className="w-[60px]" />
+        </div>
 
-        {/* <div className="absolute top-[163px] left-[-41px]">
-          <img src={eclipse03} alt="main image" />
-        </div> */}
+        <div className="absolute top-[60px] left-0">
+          <img src={eclipse03} alt="main image" className="w-[60px]" />
+        </div>
 
-        {/* <div className="absolute top-[846px] left-[263px]">
-          <img src={eclipse04} alt="main image" />
-        </div> */}
+        <div className="absolute bottom-0 left-[233px]">
+          <img src={eclipse04} alt="main image" className="w-[200px]" />
+        </div>
 
         <div className="flex items-center justify-center">
           <img src={mainImage} alt="main image" className="w-[850px]" />
