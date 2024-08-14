@@ -4,8 +4,15 @@ import eclipse01 from "../../assets/main-page/Ellipse 1.png";
 import eclipse02 from "../../assets/main-page/Ellipse 2.png";
 import eclipse03 from "../../assets/main-page/Ellipse 3.png";
 import eclipse04 from "../../assets/main-page/Ellipse 4.png";
+import { useNavigate } from "react-router";
 
 function MainPage() {
+
+  const navigate = useNavigate();
+
+  const goToHome = () => {
+    navigate("/home");
+  }
   return (
     <div className="bg-[#000000] h-screen flex items-center justify-center">
       <div className="bg-[#202020] container relative pb-20 pt-20">
@@ -74,7 +81,7 @@ function MainPage() {
               />
 
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="bg-gradient-to-r from-[#cf2786] to-[#3b3cc9] w-max rounded-[5px] px-8 py-1  cursor-pointer">
+                <div className="bg-gradient-to-r from-[#cf2786] to-[#3b3cc9] w-max rounded-[5px] px-8 py-1  cursor-pointer" onClick={goToHome}>
                   <p className="inter-font text-[11px] font-extrabold text-[#fff] md:text-[14px] lg:text-[17px] xl:text-[20px]">
                     Connect Wallet
                   </p>
