@@ -186,7 +186,7 @@ const MemeEditor = ({ image }) => {
                       fontFamily: text.fontStyle,
                       cursor: "move",
                       border:
-                        text.id === selectedTextId ? "2px dotted #000" : "none",
+                        text.id === selectedTextId ? "2px dotted #fff" : "none",
                     }}
                     onClick={() => handleSelectText(text.id)}
                   >
