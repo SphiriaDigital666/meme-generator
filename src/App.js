@@ -3,13 +3,15 @@ import "./App.css";
 import MainPage from "./components/Main-Page/MainPage";
 import NavBar from "./components/NavBar/NavBar";
 import Router from "./router/index";
+import MemeGenerator from "./components/Meme-Generator/MemeGenerator";
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       {/* <MainPage /> */}
       {/* <NavBar /> */}
-      <Router />
+      {/* <Router /> */}
+      <MemeGenerator />
     </div>
   );
 }
