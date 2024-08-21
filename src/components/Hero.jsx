@@ -1,4 +1,5 @@
 import Hero from '../assets/hero.jpg'
+import Footer from './Footer'
 import Navbar from './Navbar'
 const hero = () => {
   return (
@@ -39,6 +40,7 @@ const hero = () => {
            src={Hero} alt="MEME_Generate" />
         </div>
     </div>
+    <Footer />
    </div>
   )
 }
