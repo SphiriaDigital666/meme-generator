@@ -23,7 +23,7 @@ const TextEditor = ({
         <input
           type="text"
           value={text.text || ""}
-          className="h-[40px] w-full rounded-sm px-2"
+          className="h-[40px] w-full rounded-sm px-2 bg-white"
           onChange={onTextChange}
           placeholder="Enter text"
         />
