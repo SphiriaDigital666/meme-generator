@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,9 +38,9 @@ const Navbar = () => {
             isOpen ? "block" : "hidden"
           } md:block`}
         >
-          <a href="#" className="text-gray-300 hover:text-white">
+          <Link to="/home" className="text-gray-300 hover:text-white">
             Home
-          </a>
+          </Link>
           <a href="#" className="text-gray-300 hover:text-white">
             Meme Generate
           </a>

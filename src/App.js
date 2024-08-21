@@ -1,23 +1,40 @@
-import logo from "./logo.svg";
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import "./App.css";
-import MainPage from "./components/Main-Page/MainPage";
-import NavBar from "./components/NavBar/NavBar";
-import Router from "./router/index";
-import MemeGenerator from "./components/Meme-Generator/MemeGenerator";
+
+// Import components
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 import MemeEditor from "./components/Meme-Generator/MemeEditor";
+import MainPage from "./components/Main-Page/MainPage";
+import MemeGenerator from "./components/Meme-Generator/MemeGenerator";
 import ImageSelector from "./components/Meme-Generator/ImageSelector";
+import Login from "./components/Login/Login";
+import Home from "./components/Home/Home";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Hero />,
+  },
+  {
+    path: "/auth",
+    element: <Login />,
+  },
+  {
+    path: "/home",
+    element: <>Home Page</>,
+  },
+  {
+    path: "*",
+    element: <div>Page not found</div>,
+  },
+]);
 
 function App() {
   return (
-    <div className="">
-      {/* <MainPage /> */}
-      {/* <NavBar /> */}
-      {/* <Router /> */}
-      {/* <MemeGenerator /> */}
-      <NavBar />
-      <MemeEditor />
-      {/* <ImageSelector /> */}
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
