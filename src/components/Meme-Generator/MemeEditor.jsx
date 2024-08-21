@@ -176,47 +176,47 @@ const MemeEditor = () => {
   return (
     <div className="grid grid-cols-12 h-screen">
       <div className="bg-[#191919] col-span-1 flex flex-col pt-4 border-t border-[#535353]">
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
           <img src={media} alt="Description" />
           <p>Media</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
           <img src={crop} alt="Description" />
           <p>Crop</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 bg-[#424242] py-2">
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 bg-[#424242] py-2 cursor-pointer">
           <img src={text} alt="Description" />
           <p>Text</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
           <img src={image} alt="Description" />
           <p>Image</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
           <img src={element} alt="Description" />
           <p>Element</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
           <img src={sounds} alt="Description" />
           <p>Sounds</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
           <img src={layers} alt="Description" />
           <p>Layers</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
           <img src={template} alt="Description" />
           <p>Template</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-3">
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-3 cursor-pointer">
           <img src={more} alt="Description" />
           <p>More</p>
         </div>
@@ -241,11 +241,14 @@ const MemeEditor = () => {
             >
               {selectedImage ? (
                 <>
-                  <img
-                    src={selectedImage}
-                    alt="Meme"
-                    style={{ width: "100%", height: "auto" }}
-                  />
+                  <div className="flex items-center justify-center">
+                    <img
+                      src={selectedImage}
+                      alt="Meme"
+                      style={{ width: "50%", height: "auto" }}
+                    />
+                  </div>
+
                   {texts.map((text) => (
                     <Draggable
                       key={text.id}
@@ -371,17 +374,6 @@ const MemeEditor = () => {
               </div>
             </div>
           )}
-
-          {/* <div className="self-end">
-            <button
-              className="bg-[#8B0000] text-white py-2 px-4 rounded-md mt-4"
-              onClick={handleDownloadMeme}
-              disabled={!selectedImage}
-            >
-              <MdDownloadForOffline className="inline mr-2" />
-              Download
-            </button>
-          </div> */}
         </div>
 
         <div className="flex items-center justify-center gap-4">
