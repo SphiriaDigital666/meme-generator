@@ -29,6 +29,7 @@ import template from "../../assets/sidebar/Prototype.png";
 import more from "../../assets/sidebar/More.png";
 import help from "../../assets/sidebar/Help.png";
 
+import "./memeEditor.css";
 const images = [image1, image2, image3, image4, image5, image6, image7, image8];
 
 const MemeEditor = () => {
@@ -174,55 +175,55 @@ const MemeEditor = () => {
   };
 
   return (
-    <div className="grid grid-cols-12 h-screen">
-      <div className="bg-[#191919] col-span-1 flex flex-col pt-4 border-t border-[#535353]">
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
-          <img src={media} alt="Description" />
+    <div className="container123 bg-[#191919]  border-t border-[#535353]">
+      <div className="bg-[#191919] flex flex-col mx-auto pt-4 left-section">
+        <div className="text-[#fff] flex items-center gap-4 mb-8 px-2 cursor-pointer">
+          <img src={media} alt="Description" className="opacity-60" />
           <p>Media</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
-          <img src={crop} alt="Description" />
+        <div className="text-[#fff] flex items-center gap-4 mb-8 px-2 cursor-pointer">
+          <img src={crop} alt="Description" className="opacity-60" />
           <p>Crop</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 bg-[#424242] py-2 cursor-pointer">
-          <img src={text} alt="Description" />
+        <div className="text-[#fff] flex items-center gap-4 mb-8 px-2 cursor-pointer">
+          <img src={text} alt="Description" className="opacity-60" />
           <p>Text</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
-          <img src={image} alt="Description" />
+        <div className="text-[#fff] flex items-center gap-4 mb-8 px-2 cursor-pointer">
+          <img src={image} alt="Description" className="opacity-60" />
           <p>Image</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
-          <img src={element} alt="Description" />
+        <div className="text-[#fff] flex items-center gap-4 mb-8 px-2 cursor-pointer">
+          <img src={element} alt="Description" className="opacity-60" />
           <p>Element</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
-          <img src={sounds} alt="Description" />
+        <div className="text-[#fff] flex items-center gap-4 mb-8 px-2 cursor-pointer">
+          <img src={sounds} alt="Description" className="opacity-60" />
           <p>Sounds</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
-          <img src={layers} alt="Description" />
+        <div className="text-[#fff] flex items-center gap-4 mb-8 px-2 cursor-pointer">
+          <img src={layers} alt="Description" className="opacity-60" />
           <p>Layers</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 cursor-pointer">
-          <img src={template} alt="Description" />
+        <div className="text-[#fff] flex items-center gap-4 mb-8 px-2 cursor-pointer">
+          <img src={template} alt="Description" className="opacity-60" />
           <p>Template</p>
         </div>
 
-        <div className="text-[#fff] flex items-center gap-4 mb-6 px-3 cursor-pointer">
-          <img src={more} alt="Description" />
+        <div className="text-[#fff] flex items-center gap-4 mb-8 px-2 cursor-pointer">
+          <img src={more} alt="Description" className="opacity-60" />
           <p>More</p>
         </div>
       </div>
 
-      <div className="bg-[#191919] col-span-9 flex justify-center border border-[#535353]">
+      <div className="bg-[#191919] flex justify-center border-x border-[#535353] middle-section">
         <div>
           <p className="text-[#fff] pl-[40px] mb-4 text-[22px] mt-6">
             Meme Template
@@ -304,6 +305,7 @@ const MemeEditor = () => {
               <p class="text-center text-white mb-6">
                 Start with a blank canvas
               </p>
+
               <div class="flex justify-center space-x-4">
                 <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
                   21:9
@@ -326,7 +328,7 @@ const MemeEditor = () => {
         </div>
       </div>
 
-      <div className="bg-[#191919] col-span-2 border-t border-[#535353]">
+      <div className="bg-[#191919] right-section">
         <div className="flex items-center gap-6 mb-6 px-4 mt-4">
           <img src={TextIcon} alt="My Image" />
           <p className="self-end text-white">Text</p>
@@ -376,10 +378,18 @@ const MemeEditor = () => {
           )}
         </div>
 
-        <div className="flex items-center justify-center gap-4">
-          <div className="self-end">
+        <div className="flex flex-col items-center justify-center">
+          <button
+            className="bg-[#5f5f5f] text-white text-[14px] py-2 px-4 rounded-md mt-4 w-[150px]"
+            onClick={() => setSelectedImage(null)} // Option to clear the image
+          >
+            <MdImage className="inline mr-2" />
+            Change Image
+          </button>
+
+          <div className="">
             <button
-              className="bg-[#9bc921] text-white py-2 px-4 rounded-md mt-4"
+              className="bg-[#9bc921] text-white text-[14px] py-2 px-2 rounded-md mt-4 w-[150px]"
               onClick={handleDownloadMeme}
               disabled={!selectedImage}
             >
@@ -387,13 +397,6 @@ const MemeEditor = () => {
               Download
             </button>
           </div>
-          <button
-            className="bg-[#5f5f5f] text-white py-2 px-4 rounded-md mt-4"
-            onClick={() => setSelectedImage(null)} // Option to clear the image
-          >
-            <MdImage className="inline mr-2" />
-            Change Image
-          </button>
         </div>
       </div>
     </div>

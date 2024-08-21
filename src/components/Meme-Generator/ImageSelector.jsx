@@ -65,7 +65,7 @@ const ImageSelector = ({ onImageSelect }) => {
               key={index}
               src={image}
               alt={`Meme ${index}`}
-              className="w-[calc(12.5%-10px)] h-auto flex-shrink-0 cursor-pointer border-2 border-gray-300 rounded-md mr-2.5"
+              className="w-[calc(12.5%-10px)] h-auto flex-shrink-0 cursor-pointer border-4 border-gray-300 rounded-md mr-2.5"
               onClick={() => handleSelect(image)}
             />
           ))}
