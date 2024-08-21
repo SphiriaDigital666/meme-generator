@@ -1,4 +1,5 @@
 import Hero from "../assets/hero.jpg";
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 const hero = () => {
   return (
@@ -48,6 +49,7 @@ const hero = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
