@@ -14,8 +14,8 @@ function MainPage() {
     navigate("/home");
   }
   return (
-    <div className="bg-[#000000] h-screen flex items-center justify-center">
-      <div className="bg-[#202020] container relative pb-20 pt-20">
+    <div className="flex items-center justify-center">
+      <div className="bg-[#202020] h-screen w-full relative pb-20 pt-20">
         <p className="text-[#fff] text-[37px] inter-font font-extrabold mb-2 md:text-[46px] lg:text-[54px] xl:text-[64px] relative z-10">
           Create more
           <span
@@ -46,7 +46,7 @@ function MainPage() {
           />
         </div>
 
-        <div className="absolute bottom-[214px] right-[46px] md:bottom-[247px] md:right-[42px] lg:bottom-[330px] lg:right-[38px] xl:right-[156px] 2xl:right-[282px]">
+        <div className="absolute bottom-[214px] right-[46px] md:bottom-[247px] md:right-[42px] lg:bottom-[330px] lg:right-[38px] xl:right-[156px] 2xl:right-[475px]">
           <img
             src={eclipse03}
             alt="eclipse03 image"
@@ -64,7 +64,7 @@ function MainPage() {
 
         {/* Parent container for mainImage and eclipse04 */}
         <div className="relative flex items-center justify-center">
-          <div className="absolute bottom-[-80px] left-[30px] xl:left-[86px] 2xl:left-[213px]">
+          <div className="absolute bottom-[-175px] left-[30px] xl:left-[86px] 2xl:left-[213px]">
             <img
               src={eclipse04}
               alt="eclipse04 image"
