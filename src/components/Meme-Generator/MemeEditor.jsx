@@ -371,7 +371,7 @@ const MemeEditor = () => {
                   currentSize={
                     texts.find((text) => text.id === selectedTextId)?.fontSize
                   }
-                  onFontSizeChange={handleFontSizeChange}
+                  onSizeChange={handleFontSizeChange}
                 />
               </div>
             </div>
