@@ -176,7 +176,7 @@ const MemeEditor = () => {
 
   return (
     <div className="container123 bg-[#191919]  border-t border-[#535353]">
-      <div className="bg-[#191919] flex flex-col mx-auto pt-4 left-section">
+      {/* <div className="bg-[#191919] flex flex-col mx-auto pt-4 left-section">
         <div className="text-[#fff] flex items-center gap-4 mb-8 px-2 cursor-pointer">
           <img src={media} alt="Description" className="opacity-60" />
           <p>Media</p>
@@ -221,8 +221,79 @@ const MemeEditor = () => {
           <img src={more} alt="Description" className="opacity-60" />
           <p>More</p>
         </div>
-      </div>
+      </div> */}
 
+      <div className="bg-[#191919] right-section">
+        <div className="flex items-center gap-6 mb-6 px-4 mt-4">
+          <img src={TextIcon} alt="My Image" />
+          <p className="self-end text-white">Text</p>
+        </div>
+
+        <div className="flex">
+          {selectedImage && selectedTextId !== null && (
+            <div className="w-full">
+              <div className=" border-b border-[#535353] py-3 px-4">
+                <TextEditor
+                  text={texts.find((text) => text.id === selectedTextId)}
+                  onTextChange={handleTextChange}
+                  onAddText={handleAddText}
+                  onDeleteText={handleDeleteText}
+                  onToggleBold={handleToggleBold}
+                  onToggleItalic={handleToggleItalic}
+                  onToggleUnderline={handleToggleUnderline}
+                  isAddDisabled={texts.length >= 4}
+                />
+              </div>
+
+              <div className="border-b border-[#535353] py-3 px-4">
+                <ColorPicker
+                  currentColor={currentColor}
+                  onColorChange={handleColorChange}
+                />
+              </div>
+
+              <div className="border-b border-[#535353] py-3 px-4">
+                <FontSelector
+                  currentFont={
+                    texts.find((text) => text.id === selectedTextId)?.fontStyle
+                  }
+                  onFontChange={handleFontChange}
+                />
+              </div>
+
+              <div className="border-b border-[#535353] py-3 px-4">
+                <FontSizeSelector
+                  currentSize={
+                    texts.find((text) => text.id === selectedTextId)?.fontSize
+                  }
+                  onSizeChange={handleFontSizeChange}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="flex flex-col items-center justify-center">
+          <button
+            className="bg-[#5f5f5f] text-white text-[14px] py-2 px-4 rounded-md mt-4 w-[150px]"
+            onClick={() => setSelectedImage(null)} // Option to clear the image
+          >
+            <MdImage className="inline mr-2" />
+            Change Image
+          </button>
+
+          <div className="">
+            <button
+              className="bg-[#9bc921] text-white text-[14px] py-2 px-2 rounded-md mt-4 w-[150px]"
+              onClick={handleDownloadMeme}
+              disabled={!selectedImage}
+            >
+              <MdDownloadForOffline className="inline mr-2" />
+              Download
+            </button>
+          </div>
+        </div>
+      </div>
       <div className="bg-[#191919] flex justify-center border-x border-[#535353] middle-section">
         <div>
           <p className="text-[#fff] pl-[40px] mb-4 text-[22px] mt-6">
@@ -324,78 +395,6 @@ const MemeEditor = () => {
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-[#191919] right-section">
-        <div className="flex items-center gap-6 mb-6 px-4 mt-4">
-          <img src={TextIcon} alt="My Image" />
-          <p className="self-end text-white">Text</p>
-        </div>
-
-        <div className="flex">
-          {selectedImage && selectedTextId !== null && (
-            <div className="w-full">
-              <div className=" border-b border-[#535353] py-3 px-4">
-                <TextEditor
-                  text={texts.find((text) => text.id === selectedTextId)}
-                  onTextChange={handleTextChange}
-                  onAddText={handleAddText}
-                  onDeleteText={handleDeleteText}
-                  onToggleBold={handleToggleBold}
-                  onToggleItalic={handleToggleItalic}
-                  onToggleUnderline={handleToggleUnderline}
-                  isAddDisabled={texts.length >= 4}
-                />
-              </div>
-
-              <div className="border-b border-[#535353] py-3 px-4">
-                <ColorPicker
-                  currentColor={currentColor}
-                  onColorChange={handleColorChange}
-                />
-              </div>
-
-              <div className="border-b border-[#535353] py-3 px-4">
-                <FontSelector
-                  currentFont={
-                    texts.find((text) => text.id === selectedTextId)?.fontStyle
-                  }
-                  onFontChange={handleFontChange}
-                />
-              </div>
-
-              <div className="border-b border-[#535353] py-3 px-4">
-                <FontSizeSelector
-                  currentSize={
-                    texts.find((text) => text.id === selectedTextId)?.fontSize
-                  }
-                  onSizeChange={handleFontSizeChange}
-                />
-              </div>
-            </div>
-          )}
-        </div>
-
-        <div className="flex flex-col items-center justify-center">
-          <button
-            className="bg-[#5f5f5f] text-white text-[14px] py-2 px-4 rounded-md mt-4 w-[150px]"
-            onClick={() => setSelectedImage(null)} // Option to clear the image
-          >
-            <MdImage className="inline mr-2" />
-            Change Image
-          </button>
-
-          <div className="">
-            <button
-              className="bg-[#9bc921] text-white text-[14px] py-2 px-2 rounded-md mt-4 w-[150px]"
-              onClick={handleDownloadMeme}
-              disabled={!selectedImage}
-            >
-              <MdDownloadForOffline className="inline mr-2" />
-              Download
-            </button>
           </div>
         </div>
       </div>
