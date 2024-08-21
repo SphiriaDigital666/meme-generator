@@ -54,7 +54,7 @@ const Signin = () => {
             <Title>Sign in</Title>
             <Input type="email" placeholder="Email" />
             <Input type="password" placeholder="Password" />
-            <Button>Sign In</Button>
+            <Button onClick={handleSignUp}>Sign In</Button>
             <CancelButton onClick={handleCancel}>Cancel</CancelButton>
           </Form>
         </SignInContainer>
