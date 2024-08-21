@@ -1,18 +1,41 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Draggable from "react-draggable";
 import html2canvas from "html2canvas";
 import TextEditor from "./TextEditor";
 import ColorPicker from "./ColorPicker";
 import FontSelector from "./FontSelector";
 import FontSizeSelector from "./FontSizeSelector";
-import { MdDownloadForOffline } from "react-icons/md";
-
+import { MdDownloadForOffline, MdImage } from "react-icons/md";
+import ImageSelector from "./ImageSelector";
 import TextIcon from "../../assets/textEditor/Lowercase.png";
 
-const MemeEditor = ({ image }) => {
+import image1 from "../../assets/image01.png";
+import image2 from "../../assets/image02.png";
+import image3 from "../../assets/image03.png";
+import image4 from "../../assets/image04.png";
+import image5 from "../../assets/image05.png";
+import image6 from "../../assets/image06.png";
+import image7 from "../../assets/image07.png";
+import image8 from "../../assets/5.png";
+
+import media from "../../assets/sidebar/Import.png";
+import crop from "../../assets/sidebar/Crop.png";
+import text from "../../assets/sidebar/Lowercase (1).png";
+import image from "../../assets/sidebar/Image File.png";
+import element from "../../assets/sidebar/Apps.png";
+import sounds from "../../assets/sidebar/Audio.png";
+import layers from "../../assets/sidebar/Layers.png";
+import template from "../../assets/sidebar/Prototype.png";
+import more from "../../assets/sidebar/More.png";
+import help from "../../assets/sidebar/Help.png";
+
+const images = [image1, image2, image3, image4, image5, image6, image7, image8];
+
+const MemeEditor = () => {
   const [texts, setTexts] = useState([]);
   const [selectedTextId, setSelectedTextId] = useState(null);
   const [currentColor, setCurrentColor] = useState("#ffffff");
+  const [selectedImage, setSelectedImage] = useState(null);
   const memeRef = useRef(null);
 
   useEffect(() => {
@@ -145,68 +168,169 @@ const MemeEditor = ({ image }) => {
     });
   };
 
+  const handleImageSelect = (image) => {
+    setSelectedImage(image);
+    // No need to hide the image selector
+  };
+
   return (
     <div className="grid grid-cols-12 h-screen">
-      <div className="bg-[#191919] col-span-2">01</div>
-      <div className="bg-[#191919] col-span-8 flex justify-center border border-[#535353]">
+      <div className="bg-[#191919] col-span-1 flex flex-col pt-4 border-t border-[#535353]">
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+          <img src={media} alt="Description" />
+          <p>Media</p>
+        </div>
+
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+          <img src={crop} alt="Description" />
+          <p>Crop</p>
+        </div>
+
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2 bg-[#424242] py-2">
+          <img src={text} alt="Description" />
+          <p>Text</p>
+        </div>
+
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+          <img src={image} alt="Description" />
+          <p>Image</p>
+        </div>
+
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+          <img src={element} alt="Description" />
+          <p>Element</p>
+        </div>
+
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+          <img src={sounds} alt="Description" />
+          <p>Sounds</p>
+        </div>
+
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+          <img src={layers} alt="Description" />
+          <p>Layers</p>
+        </div>
+
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-2">
+          <img src={template} alt="Description" />
+          <p>Template</p>
+        </div>
+
+        <div className="text-[#fff] flex items-center gap-4 mb-6 px-3">
+          <img src={more} alt="Description" />
+          <p>More</p>
+        </div>
+      </div>
+
+      <div className="bg-[#191919] col-span-9 flex justify-center border border-[#535353]">
         <div>
-          <div style={{ position: "relative", width: "500px" }}>
+          <p className="text-[#fff] pl-[40px] mb-4 text-[22px] mt-6">
+            Meme Template
+          </p>
+          <div
+            style={{
+              position: "relative",
+              width: "",
+              paddingLeft: "40px",
+              paddingRight: "40px",
+            }}
+          >
             <div
               ref={memeRef}
               style={{ position: "relative", display: "inline-block" }}
             >
-              <img
-                src={image}
-                alt="Meme"
-                style={{ width: "100%", height: "auto" }}
-              />
-              {texts.map((text) => (
-                <Draggable
-                  key={text.id}
-                  defaultPosition={{ x: text.x, y: text.y }}
-                  onStop={(e, data) => {
-                    const newTexts = texts.map((t) =>
-                      t.id === text.id ? { ...t, x: data.x, y: data.y } : t
-                    );
-                    setTexts(newTexts);
-                  }}
-                >
-                  <div
-                    id={`text-${text.id}`}
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      color: text.color,
-                      fontSize: `${text.fontSize}px`,
-                      fontWeight: text.fontWeight,
-                      textDecoration: text.textDecoration,
-                      fontStyle: text.fontStyle,
-                      textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-                      fontFamily: text.fontStyle,
-                      cursor: "move",
-                      border:
-                        text.id === selectedTextId ? "2px dotted #fff" : "none",
-                    }}
-                    onClick={() => handleSelectText(text.id)}
-                  >
-                    {text.text}
-                  </div>
-                </Draggable>
-              ))}
+              {selectedImage ? (
+                <>
+                  <img
+                    src={selectedImage}
+                    alt="Meme"
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                  {texts.map((text) => (
+                    <Draggable
+                      key={text.id}
+                      defaultPosition={{ x: text.x, y: text.y }}
+                      onStop={(e, data) => {
+                        const newTexts = texts.map((t) =>
+                          t.id === text.id ? { ...t, x: data.x, y: data.y } : t
+                        );
+                        setTexts(newTexts);
+                      }}
+                    >
+                      <div
+                        id={`text-${text.id}`}
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          color: text.color,
+                          fontSize: `${text.fontSize}px`,
+                          fontWeight: text.fontWeight,
+                          textDecoration: text.textDecoration,
+                          fontStyle: text.fontStyle,
+                          textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+                          fontFamily: text.fontStyle,
+                          cursor: "move",
+                          border:
+                            text.id === selectedTextId
+                              ? "2px dotted #fff"
+                              : "none",
+                        }}
+                        onClick={() => handleSelectText(text.id)}
+                      >
+                        {text.text}
+                      </div>
+                    </Draggable>
+                  ))}
+                </>
+              ) : (
+                <div className="w-full">
+                  <ImageSelector onImageSelect={handleImageSelect} />
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* resolution section starts here */}
+          <div class="px-4 bg-[#424242] h-[500px] mt-8 flex items-center justify-center mx-6">
+            <div className="">
+              <h1 class="text-3xl text-center  text-white">Select Your Meme</h1>
+              <div className="flex justify-center">
+                <div className="border-b border-[#aaaaaa] w-[600px] flex justify-center my-3"></div>
+              </div>
+              <p class="text-center text-white mb-6">
+                Start with a blank canvas
+              </p>
+              <div class="flex justify-center space-x-4">
+                <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                  21:9
+                </button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                  16:9
+                </button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                  1:1
+                </button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                  4:5
+                </button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                  9:16
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-[#191919] col-span-2">
-        <div className="flex items-center gap-6 mb-6">
+      <div className="bg-[#191919] col-span-2 border-t border-[#535353]">
+        <div className="flex items-center gap-6 mb-6 px-4 mt-4">
           <img src={TextIcon} alt="My Image" />
           <p className="self-end text-white">Text</p>
         </div>
 
         <div className="flex">
-          {selectedTextId !== null && (
+          {selectedImage && selectedTextId !== null && (
             <div className="w-full">
               <div className=" border-b border-[#535353] py-3 px-4">
                 <TextEditor
@@ -242,20 +366,42 @@ const MemeEditor = ({ image }) => {
                   currentSize={
                     texts.find((text) => text.id === selectedTextId)?.fontSize
                   }
-                  onSizeChange={handleFontSizeChange}
+                  onFontSizeChange={handleFontSizeChange}
                 />
-              </div>
-
-              <div className="flex items-center justify-center text-white py-3">
-                <button onClick={handleDownloadMeme}>
-                  <div className="flex items-center justify-center gap-2 bg-[#9fcc26] py-1 px-2 rounded-md text-[#2e2e2e]">
-                    Download Meme{" "}
-                    <MdDownloadForOffline className="text-[22px] text-[#464646]" />
-                  </div>
-                </button>
               </div>
             </div>
           )}
+
+          {/* <div className="self-end">
+            <button
+              className="bg-[#8B0000] text-white py-2 px-4 rounded-md mt-4"
+              onClick={handleDownloadMeme}
+              disabled={!selectedImage}
+            >
+              <MdDownloadForOffline className="inline mr-2" />
+              Download
+            </button>
+          </div> */}
+        </div>
+
+        <div className="flex items-center justify-center gap-4">
+          <div className="self-end">
+            <button
+              className="bg-[#9bc921] text-white py-2 px-4 rounded-md mt-4"
+              onClick={handleDownloadMeme}
+              disabled={!selectedImage}
+            >
+              <MdDownloadForOffline className="inline mr-2" />
+              Download
+            </button>
+          </div>
+          <button
+            className="bg-[#5f5f5f] text-white py-2 px-4 rounded-md mt-4"
+            onClick={() => setSelectedImage(null)} // Option to clear the image
+          >
+            <MdImage className="inline mr-2" />
+            Change Image
+          </button>
         </div>
       </div>
     </div>
