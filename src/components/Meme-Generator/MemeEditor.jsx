@@ -1,10 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Draggable from "react-draggable";
 import html2canvas from "html2canvas";
 import TextEditor from "./TextEditor";
 import ColorPicker from "./ColorPicker";
 import FontSelector from "./FontSelector";
 import FontSizeSelector from "./FontSizeSelector";
+import { MdDownloadForOffline, MdImage } from "react-icons/md";
+import ImageSelector from "./ImageSelector";
 import { MdDownloadForOffline, MdImage } from "react-icons/md";
 import ImageSelector from "./ImageSelector";
 import TextIcon from "../../assets/textEditor/Lowercase.png";
@@ -35,6 +38,7 @@ const MemeEditor = () => {
   const [texts, setTexts] = useState([]);
   const [selectedTextId, setSelectedTextId] = useState(null);
   const [currentColor, setCurrentColor] = useState("#ffffff");
+  const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const memeRef = useRef(null);
 
@@ -403,6 +407,14 @@ const MemeEditor = () => {
             Change Image
           </button>
         </div>
+
+        <button
+          className="bg-[#8B0000] text-white py-2 px-4 rounded-md mt-4"
+          onClick={() => setSelectedImage(null)} // Option to clear the image
+        >
+          <MdImage className="inline mr-2" />
+          Change Image
+        </button>
       </div>
     </div>
   );
