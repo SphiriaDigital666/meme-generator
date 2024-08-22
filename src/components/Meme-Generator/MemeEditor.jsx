@@ -224,7 +224,24 @@ const MemeEditor = () => {
       </div> */}
 
       <div className="bg-[#191919] right-section">
-        <div className="flex items-end w-fit gap-4 m-3 mb-[18px] lg:mt-4 lg:mb-6 lg:mx-auto xl:gap-6 lg:w-[120px] xl:w-[130px] 2xl:w-[150px]">
+        {selectedImage && selectedTextId ? (
+          <div className="flex items-end w-fit gap-4 m-3 mb-[18px] lg:mt-4 lg:mb-6 lg:mx-auto xl:gap-6 lg:w-[120px] xl:w-[130px] 2xl:w-[150px]">
+            <img
+              src={TextIcon}
+              alt="My Image"
+              className="w-5 md:w-6 lg:w-7 xl:w-8 2xl:w-9 translate-y-[1px] xl:translate-y-[2px]"
+            />
+            <p className="text-white text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] leading-none">
+              Text Editor
+            </p>
+          </div>
+        ) : (
+          <p className="p-4 text-center">
+            Pick a Meme Template to Start Editing Your Meme.
+          </p>
+        )}
+
+        {/* <div className="flex items-end w-fit gap-4 m-3 mb-[18px] lg:mt-4 lg:mb-6 lg:mx-auto xl:gap-6 lg:w-[120px] xl:w-[130px] 2xl:w-[150px]">
           <img
             src={TextIcon}
             alt="My Image"
@@ -233,7 +250,7 @@ const MemeEditor = () => {
           <p className="text-white text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] leading-none">
             Text Editor
           </p>
-        </div>
+        </div> */}
 
         <div className="flex">
           {selectedImage && selectedTextId !== null && (
@@ -305,9 +322,16 @@ const MemeEditor = () => {
 
       <div className="bg-[#191919] flex justify-center border-x border-[#535353] middle-section">
         <div>
-          <p className="text-[#fff] sm:pl-[40px] mb-4 text-[16px] md:text-[19px] lg:text-[20px] xl:text-[21px] 2xl:text-[22px] mt-6 text-center sm:text-left">
-            Meme Template
-          </p>
+          {selectedImage && selectedTextId ? (
+            <p className="text-[#fff] sm:pl-[40px] mb-4 text-[16px] md:text-[19px] lg:text-[20px] xl:text-[21px] 2xl:text-[22px] mt-6 text-center sm:text-left">
+              Meme Template
+            </p>
+          ) : (
+            <p className="text-[#fff] sm:pl-[40px] mb-4 text-[16px] md:text-[19px] lg:text-[20px] xl:text-[21px] 2xl:text-[22px] mt-6 text-center sm:text-left">
+              Meme Templates
+            </p>
+          )}
+
           <div
             style={{
               position: "relative",
@@ -376,28 +400,33 @@ const MemeEditor = () => {
 
             {/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
 
-            <div className="flex flex-col items-center justify-center mb-6 mt-4">
-              <div className="block sm:hidden">
-                <button
-                  className="bg-[#5f5f5f] text-white leading-none flex gap-1 justify-center items-center py-2 text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px] rounded-md mt-4 mx-3 lg:mx-0 w-[100px] md:w-[110px] lg:w-[120px] xl:w-[130px] 2xl:w-[150px]"
-                  onClick={() => setSelectedImage(null)} // Option to clear the image
-                >
-                  <MdImage className="-translate-y-[1px]" />
-                  Change Image
-                </button>
-              </div>
+            {selectedImage && selectedTextId !== null && (
+              <div className="w-full">
+                {" "}
+                <div className="flex flex-col items-center justify-center mb-6 mt-4">
+                  <div className="block sm:hidden">
+                    <button
+                      className="bg-[#5f5f5f] text-white leading-none flex gap-1 justify-center items-center py-2 text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px] rounded-md mt-4 mx-3 lg:mx-0 w-[100px] md:w-[110px] lg:w-[120px] xl:w-[130px] 2xl:w-[150px]"
+                      onClick={() => setSelectedImage(null)} // Option to clear the image
+                    >
+                      <MdImage className="-translate-y-[1px]" />
+                      Change Image
+                    </button>
+                  </div>
 
-              <div className="block sm:hidden">
-                <button
-                  className="bg-[#9bc921] text-white leading-none flex gap-1 justify-center items-center py-2 text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px] rounded-md mt-4 mx-3 lg:mx-0 w-[100px] md:w-[110px] lg:w-[120px] xl:w-[130px] 2xl:w-[150px]"
-                  onClick={handleDownloadMeme}
-                  disabled={!selectedImage}
-                >
-                  <MdDownloadForOffline />
-                  Download
-                </button>
+                  <div className="block sm:hidden">
+                    <button
+                      className="bg-[#9bc921] text-white leading-none flex gap-1 justify-center items-center py-2 text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px] rounded-md mt-4 mx-3 lg:mx-0 w-[100px] md:w-[110px] lg:w-[120px] xl:w-[130px] 2xl:w-[150px]"
+                      onClick={handleDownloadMeme}
+                      disabled={!selectedImage}
+                    >
+                      <MdDownloadForOffline />
+                      Download
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
           </div>
