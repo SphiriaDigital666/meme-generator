@@ -231,7 +231,7 @@ const MemeEditor = () => {
             className="w-5 md:w-6 lg:w-7 xl:w-8 2xl:w-9 translate-y-[1px] xl:translate-y-[2px]"
           />
           <p className="text-white text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] leading-none">
-            Text
+            Text Editor
           </p>
         </div>
 
@@ -298,6 +298,7 @@ const MemeEditor = () => {
           </button>
         </div>
       </div>
+
       <div className="bg-[#191919] flex justify-center border-x border-[#535353] middle-section">
         <div>
           <p className="text-[#fff] pl-[40px] mb-4 text-[18px] md:text-[19px] lg:text-[20px] xl:text-[21px] 2xl:text-[22px] mt-6">
@@ -371,7 +372,7 @@ const MemeEditor = () => {
           </div>
 
           {/* resolution section starts here */}
-          <div class="px-4 bg-[#424242] h-[500px] mt-8 flex items-center justify-center mx-6">
+          {/* <div class="px-4 bg-[#424242] h-[500px] mt-8 flex items-center justify-center mx-6">
             <div className="flex flex-col items-center">
               <h1 class="text-center text-white sm:text-2xl lg:text-3xl">
                 Select Your Meme
@@ -399,7 +400,7 @@ const MemeEditor = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
