@@ -23,7 +23,7 @@ const TextEditor = ({
         <input
           type="text"
           value={text.text || ""}
-          className="h-[40px] w-full rounded-sm px-2 bg-white"
+          className="w-full rounded-sm px-2 bg-white sm:text-[14px] lg:text-[15px] 2xl:text-[16px] py-1.5 2xl:py-2"
           onChange={onTextChange}
           placeholder="Enter text"
         />
@@ -33,16 +33,16 @@ const TextEditor = ({
         <button
           onClick={onAddText}
           disabled={isAddDisabled}
-          className="bg-[#40813f] py-1 px-2 rounded-md flex items-center justify-center gap-2"
+          className="bg-[#40813f] py-1 px-2 rounded-md flex items-center justify-center gap-1 sm:text-[14px] lg:text-[15px] 2xl:text-[16px]"
         >
-          <MdAddToPhotos className="text-[18px]" />
+          <MdAddToPhotos className="text-[16px] 2xl:text-[18px]" />
           Add
         </button>
         <button
           onClick={onDeleteText}
-          className="bg-[#e5342f] py-1 px-2 rounded-md flex items-center justify-center gap-2"
+          className="bg-[#e5342f] py-1 px-2 rounded-md flex items-center justify-center gap-0.5 sm:text-[14px] lg:text-[15px] 2xl:text-[16px]"
         >
-          <MdDeleteForever className="text-[18px]" />
+          <MdDeleteForever className="text-[16px] 2xl:text-[18px] -translate-y-[1px]" />
           Delete
         </button>
       </div>

@@ -6,7 +6,9 @@ const ColorPicker = ({ currentColor, onColorChange }) => {
 
   return (
     <div>
-      <h3 className="text-white mb-2">Select Text Color:</h3>
+      <h3 className="text-white mb-2 sm:text-[14px] lg:text-[15px] 2xl:text-[16px] leading-6">
+        Select Text Color:
+      </h3>
       <button
         onClick={() => setShowColorPicker(!showColorPicker)}
         style={{
@@ -15,10 +17,13 @@ const ColorPicker = ({ currentColor, onColorChange }) => {
           height: "50px",
           border: "2px solid white",
           cursor: "pointer",
+          position: "relative",
         }}
       />
       {showColorPicker && (
-        <SketchPicker color={currentColor} onChangeComplete={onColorChange} />
+        <div className="absolute">
+          <SketchPicker color={currentColor} onChangeComplete={onColorChange} />
+        </div>
       )}
     </div>
   );
