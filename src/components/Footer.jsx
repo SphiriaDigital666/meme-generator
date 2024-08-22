@@ -1,8 +1,9 @@
 import { resourcesLinks, platformLinks, communityLinks } from "../constants";
-import Logo from '../assets/logo.png';
+
 import Facebook from '../assets/facebook.png';
 import Instagram from '../assets/instagram.png';
 import Dicord from '../assets/discord.png';
+import memelogonav from '../assets/memelogonav.png'
 
 const Footer = () => {
   return (
@@ -40,7 +41,7 @@ const Footer = () => {
         </div>
         <div>
         <div className="flex items-center flex-shrink-0">
-    <img className="w-6 h-6 mr-2 sm:w-8 sm:h-8 md:w-10 md:h-10" src={Logo} alt="MEME_Generate" />
+    <img className="w-6 h-6 mr-2 sm:w-8 sm:h-8 md:w-10 md:h-10" src={memelogonav} alt="MEME_Generate" />
     <span className="text-xs tracking-tight sm:text-xs md:text-lg">MEME_Generate</span>
 </div>
 

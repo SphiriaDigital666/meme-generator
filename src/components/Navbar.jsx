@@ -1,7 +1,8 @@
-import logo from '../assets/logo.png';
+
 import { navItems } from '../constants';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import memelogonav from '../assets/memelogonav.png'
 import Signin from './Signin/Signin';
 
 const Navbar = () => {
@@ -17,7 +18,7 @@ const Navbar = () => {
             <div className="container relative px-4 mx-auto text-sm">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center flex-shrink-0">
-                        <img className="w-10 h-10 mr-2" src={logo} alt="MEME_Generate" />
+                        <img className="w-10 h-10 mr-2" src={memelogonav} alt="MEME_Generate" />
                         <span className='text-xl tracking-tight'>MEME_Generate</span>
                     </div>
                     <ul className='hidden space-x-12 lg:flex ml-14'>
@@ -34,7 +35,7 @@ const Navbar = () => {
                         >
                             Sign In
                         </button>
-                        <a href='#' className='bg-gradient-to-r from-[#D42680] to-[#3D3BC9] py-2 px-3 rounded-md'>
+                        <a href='#' className='bg-gradient-to-r from-[#F9E15C] to-[#E68C01] py-2 px-3 rounded-md'>
                             Create an account
                         </a>
                     </div>
@@ -61,7 +62,7 @@ const Navbar = () => {
                             >
                                 Sign In
                             </button>
-                            <a href='#' className='bg-gradient-to-r from-[#D42680] to-[#3D3BC9] py-2 px-3 rounded-md'>
+                            <a href='#' className='bg-gradient-to-r from-[#F9E15C] to-[#E68C01] py-2 px-3 rounded-md'>
                                 Create an account
                             </a>
                         </div>

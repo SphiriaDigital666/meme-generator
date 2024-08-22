@@ -1,0 +1,53 @@
+:root {
+    font-family: "Roboto", sans-serif;
+    color-scheme: light;
+  }
+  
+  /* Default (light mode) - Applies to all screens by default */
+  body {
+    background-image: url('../src/assets/ellipse-light.png'),
+                      url('../src/assets/ellipse-light.png'),
+                      url('../src/assets/ellipse-light.png'),
+                      url('../src/assets/ellipse-light.png');
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: right 1450px bottom 400px, 
+                         left -20px top 200px, 
+                         right -100px top -50px,
+                         right 250px bottom 800px;
+    background-size: 300px 300px, 200px 200px, 400px 400px, 100px 100px;
+    position: relative;
+  }
+  
+  /* Light Mode */
+  @media (prefers-color-scheme: light) {
+    body {
+      background-position: right 20vw bottom 40vh,
+                           left 5vw top 20vh, 
+                           right 10vw top 10vh, 
+                           right 15vw bottom 60vh;
+      background-size: 15vw 15vh, 10vw 10vh, 20vw 20vh, 5vw 5vh;
+    }
+  }
+  
+  /* Medium Screens */
+  @media (max-width: 1024px) and (prefers-color-scheme: light) {
+    body {
+      background-position: right 25vw bottom 50vh, 
+                           left 5vw top 15vh, 
+                           right 5vw top 10vh,
+                           right 10vw bottom 70vh;
+      background-size: 15vw 15vh, 10vw 10vh, 20vw 20vh, 5vw 5vh;
+    }
+  }
+  
+  /* Small Screens */
+  @media (max-width: 640px) and (prefers-color-scheme: light) {
+    body {
+      background-position: right 10vw bottom 40vh,
+                           left 2vw top 50vh,
+                           right 2vw top 10vh,
+                           right 5vw bottom 50vh;
+      background-size: 20vw 20vh, 15vw 15vh, 25vw 25vh, 10vw 10vh;
+    }
+  }
+  
