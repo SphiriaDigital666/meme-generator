@@ -66,7 +66,9 @@ const ImageSelector = ({ onImageSelect }) => {
               src={image}
               alt={`Meme ${index}`}
               // className="w-[calc(12.5%-10px)] h-auto flex-shrink-0 cursor-pointer border-4 border-gray-300 rounded-md mr-2.5"
-              className="w-[calc(19.1%-5px)] h-auto flex-shrink-0 cursor-pointer border-[3px] lg:border-4 border-gray-300 rounded-md mr-2.5 md:w-[calc(16.2%-6px)] lg:w-[calc(14%-7px)] xl:w-[calc(12.5%-10px)]"
+              // className="w-[calc(19.1%-5px)] h-auto flex-shrink-0 cursor-pointer border-[3px] lg:border-4 border-gray-300 rounded-md mr-2.5 sm:w-[calc(16.2%-6px) md:w-[calc(16.2%-6px)] lg:w-[calc(14%-7px)] xl:w-[calc(12.5%-10px)] 2xl:w-[calc(12.5%-10px)]"
+
+              className="h-auto flex-shrink-0 cursor-pointer border-[3px] lg:border-4 border-gray-300 rounded-md mr-2.5 w-[calc(33%-6px)] sm:w-[calc(33%-6px)] md:w-[calc(16.2%-6px)] lg:w-[calc(14%-7px)] xl:w-[calc(12.5%-10px)] 2xl:w-[calc(12.5%-10px)]"
               onClick={() => handleSelect(image)}
             />
           ))}
