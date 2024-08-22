@@ -51,7 +51,7 @@ const ImageSelector = ({ onImageSelect }) => {
     <div className="relative w-full overflow-hidden">
       <button
         onClick={handlePrev}
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 bg-gray-800 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl cursor-pointer"
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 bg-gray-800 text-white rounded-full size-7 flex items-center justify-center text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl cursor-pointer md:size-8 lg:size-9 xl:size-10 2xl:size-12"
       >
         <FaAngleLeft />
       </button>
@@ -65,7 +65,8 @@ const ImageSelector = ({ onImageSelect }) => {
               key={index}
               src={image}
               alt={`Meme ${index}`}
-              className="w-[calc(12.5%-10px)] h-auto flex-shrink-0 cursor-pointer border-4 border-gray-300 rounded-md mr-2.5"
+              // className="w-[calc(12.5%-10px)] h-auto flex-shrink-0 cursor-pointer border-4 border-gray-300 rounded-md mr-2.5"
+              className="w-[calc(19.1%-5px)] h-auto flex-shrink-0 cursor-pointer border-[3px] lg:border-4 border-gray-300 rounded-md mr-2.5 md:w-[calc(16.2%-6px)] lg:w-[calc(14%-7px)] xl:w-[calc(12.5%-10px)]"
               onClick={() => handleSelect(image)}
             />
           ))}
@@ -73,7 +74,7 @@ const ImageSelector = ({ onImageSelect }) => {
       </div>
       <button
         onClick={handleNext}
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10 bg-gray-800 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl cursor-pointer"
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10 bg-gray-800 text-white rounded-full size-7 flex items-center justify-center text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl cursor-pointer md:size-8 lg:size-9 xl:size-10 2xl:size-12"
       >
         <FaAngleRight />
       </button>
