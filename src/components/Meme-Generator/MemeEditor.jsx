@@ -275,33 +275,37 @@ const MemeEditor = () => {
                   onSizeChange={handleFontSizeChange}
                 />
               </div>
+
+              <div className="flex flex-col items-center justify-center">
+                <div className="hidden sm:block">
+                  <button
+                    className="bg-[#5f5f5f] text-white leading-none flex gap-1 justify-center items-center py-3 text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px] rounded-md mt-4 mx-3 lg:mx-0 w-[100px] md:w-[110px] lg:w-[120px] xl:w-[130px] 2xl:w-[150px] "
+                    onClick={() => setSelectedImage(null)} // Option to clear the image
+                  >
+                    <MdImage className="-translate-y-[1px]" />
+                    Change Image
+                  </button>
+                </div>
+
+                <div className="hidden sm:block">
+                  <button
+                    className="bg-[#9bc921] text-white leading-none flex gap-1 justify-center items-center py-3 text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px] rounded-md mt-4 mx-3 lg:mx-0 w-[100px] md:w-[110px] lg:w-[120px] xl:w-[130px] 2xl:w-[150px]"
+                    onClick={handleDownloadMeme}
+                    disabled={!selectedImage}
+                  >
+                    <MdDownloadForOffline />
+                    Download
+                  </button>
+                </div>
+              </div>
             </div>
           )}
-        </div>
-
-        <div className="flex flex-col items-center justify-center">
-          <button
-            className="bg-[#5f5f5f] text-white leading-none flex gap-1 justify-center items-center py-3 text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px] rounded-md mt-4 mx-3 lg:mx-0 w-[100px] md:w-[110px] lg:w-[120px] xl:w-[130px] 2xl:w-[150px]"
-            onClick={() => setSelectedImage(null)} // Option to clear the image
-          >
-            <MdImage className="-translate-y-[1px]" />
-            Change Image
-          </button>
-
-          <button
-            className="bg-[#9bc921] text-white leading-none flex gap-1 justify-center items-center py-3 text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px] rounded-md mt-4 mx-3 lg:mx-0 w-[100px] md:w-[110px] lg:w-[120px] xl:w-[130px] 2xl:w-[150px]"
-            onClick={handleDownloadMeme}
-            disabled={!selectedImage}
-          >
-            <MdDownloadForOffline />
-            Download
-          </button>
         </div>
       </div>
 
       <div className="bg-[#191919] flex justify-center border-x border-[#535353] middle-section">
         <div>
-          <p className="text-[#fff] pl-[40px] mb-4 text-[18px] md:text-[19px] lg:text-[20px] xl:text-[21px] 2xl:text-[22px] mt-6">
+          <p className="text-[#fff] pl-[40px] mb-4 text-[18px] md:text-[19px] lg:text-[20px] xl:text-[21px] 2xl:text-[22px] mt-6 text-center sm:text-left">
             Meme Template
           </p>
           <div
@@ -369,6 +373,33 @@ const MemeEditor = () => {
                 </div>
               )}
             </div>
+
+            {/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
+
+            <div className="flex flex-col items-center justify-center mb-6 mt-4">
+              <div className="block sm:hidden">
+                <button
+                  className="bg-[#5f5f5f] text-white leading-none flex gap-1 justify-center items-center py-2 text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px] rounded-md mt-4 mx-3 lg:mx-0 w-[100px] md:w-[110px] lg:w-[120px] xl:w-[130px] 2xl:w-[150px]"
+                  onClick={() => setSelectedImage(null)} // Option to clear the image
+                >
+                  <MdImage className="-translate-y-[1px]" />
+                  Change Image
+                </button>
+              </div>
+
+              <div className="block sm:hidden">
+                <button
+                  className="bg-[#9bc921] text-white leading-none flex gap-1 justify-center items-center py-2 text-[10px] md:text-[11px] lg:text-[12px] xl:text-[13px] 2xl:text-[14px] rounded-md mt-4 mx-3 lg:mx-0 w-[100px] md:w-[110px] lg:w-[120px] xl:w-[130px] 2xl:w-[150px]"
+                  onClick={handleDownloadMeme}
+                  disabled={!selectedImage}
+                >
+                  <MdDownloadForOffline />
+                  Download
+                </button>
+              </div>
+            </div>
+
+            {/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
           </div>
 
           {/* resolution section starts here */}
