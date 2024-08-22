@@ -305,7 +305,7 @@ const MemeEditor = () => {
 
       <div className="bg-[#191919] flex justify-center border-x border-[#535353] middle-section">
         <div>
-          <p className="text-[#fff] pl-[40px] mb-4 text-[18px] md:text-[19px] lg:text-[20px] xl:text-[21px] 2xl:text-[22px] mt-6 text-center sm:text-left">
+          <p className="text-[#fff] sm:pl-[40px] mb-4 text-[16px] md:text-[19px] lg:text-[20px] xl:text-[21px] 2xl:text-[22px] mt-6 text-center sm:text-left">
             Meme Template
           </p>
           <div
