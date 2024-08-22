@@ -34,50 +34,50 @@ code {
   color-scheme: dark;
 }
 
-/* Default settings for larger screens */
+/* Default (light mode) - Applies to all screens by default */
+body {
+  background-image: url('../src/assets/ellipse.png'),
+                    url('../src/assets/ellipse.png'),
+                    url('../src/assets/ellipse.png'),
+                    url('../src/assets/ellipse.png');
+                    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                    background-position: right 1450px bottom 400px, 
+                                         left -20px top 200px, 
+                                         right -100px top -50px,
+                                         right 250px bottom 800px;
+                    background-size: 300px 300px, 200px 200px, 400px 400px, 100px 100px;
+                    position: relative;
+}
+
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   body {
-    background-image: url('../src/assets/ellipse.png'), 
-                      url('../src/assets/ellipse.png'), 
-                      url('../src/assets/ellipse.png'),
-                      url('../src/assets/ellipse.png');
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-position: right 1450px bottom 400px, 
-                         left -20px top 200px, 
-                         right -100px top -50px,
-                         right 250px bottom 800px;
-    background-size: 300px 300px, 200px 200px, 400px 400px, 100px 100px;
-    position: relative;
+    background-position: right 20vw bottom 40vh,
+                         left 5vw top 20vh, 
+                         right 10vw top 10vh, 
+                         right 15vw bottom 60vh;
+    background-size: 15vw 15vh, 10vw 10vh, 20vw 20vh, 5vw 5vh;
   }
 }
 
-/* For medium-sized screens like tablets */
+/* Medium Screens */
 @media (max-width: 1024px) and (prefers-color-scheme: dark) {
   body {
-    background-position: right 800px bottom 650px, 
-                         left -60px top 150px, 
-                         right -30px top -130px,
-                         right 200px bottom 900px;
-    background-size: 250px 250px, 150px 150px, 300px 300px, 80px 80px;
+    background-position: right 25vw bottom 50vh, 
+                         left 5vw top 15vh, 
+                         right 5vw top 10vh,
+                         right 10vw bottom 70vh;
+    background-size: 15vw 15vh, 10vw 10vh, 20vw 20vh, 5vw 5vh;
   }
 }
 
-/* For smaller screens like mobile */
+/* Small Screens */
 @media (max-width: 640px) and (prefers-color-scheme: dark) {
   body {
-    background-position: right 50px bottom 400px,
-                         left -30px top 700px,
-                         right -20px top -60px,
-                         right 5px bottom 500px;
-    background-size: 150px 150px, 100px 100px, 200px 200px, 50px 50px;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-position: right 10vw bottom 40vh,
+                         left 2vw top 50vh,
+                         right 2vw top 10vh,
+                         right 5vw bottom 50vh;
+    background-size: 20vw 20vh, 15vw 15vh, 25vw 25vh, 10vw 10vh;
   }
 }

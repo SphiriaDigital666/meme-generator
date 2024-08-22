@@ -1,6 +1,8 @@
+import '../components/homestyle.css'
 import Hero from '../assets/hero.jpg'
 import Footer from './Footer'
 import Navbar from './Navbar'
+
 const hero = () => {
   return (
    <div>
@@ -8,7 +10,7 @@ const hero = () => {
      <div className="flex flex-col items-center mt-6 lg:mt-10">
         <h1 className="text-4xl tracking-wide text-center sm:text-6xl lg:text-7xl">
         Create more 
-        <span className="bg-gradient-to-r from-[#D42680] to-[#3D3BC9] text-transparent bg-clip-text font-bold">
+        <span className="bg-gradient-to-r from-[#F9E15C] to-[#E68C01] text-transparent bg-clip-text font-bold">
             {" "}
             MEME
         </span>
@@ -23,7 +25,7 @@ const hero = () => {
         <div className="flex flex-col items-center justify-center my-10 sm:flex-row">
     <a 
         href="#" 
-        className="bg-gradient-to-r from-[#D42680] to-[#3D3BC9] py-2 px-6 mx-2 sm:mx-3 rounded-md text-xs sm:text-sm"
+        className="bg-gradient-to-r from-[#F9E15C] to-[#E68C01] py-2 px-6 mx-2 sm:mx-3 rounded-md text-xs sm:text-sm"
     >
         Connect Wallet
     </a>
@@ -35,7 +37,7 @@ const hero = () => {
     </a>
 </div>
 
-        <div className="flex mt-10 justify-center bg-gradient-to-r from-[#D42680] to-[#3D3BC9]">
+        <div className="flex mt-10 justify-center bg-gradient-to-r from-[#F9E15C] to-[#E68C01]">
           <img className=" w-1.2 mx-2 my-4"
            src={Hero} alt="MEME_Generate" />
         </div>
