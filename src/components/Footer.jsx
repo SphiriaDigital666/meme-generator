@@ -7,7 +7,7 @@ import memelogonav from '../assets/memelogonav.png'
 
 const Footer = () => {
   return (
-    <footer className="py-10 mt-20 border-t border-neutral-700">
+    <footer className="py-10 mt-20 border-t border-neutral-700 mx-auto max-w-screen-xl">
       <div className="grid grid-cols-2 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-4 sm:px-8 lg:px-14">
         <div>
           <h3 className="mb-4 text-sm font-semibold sm:text-md">Resources</h3>
