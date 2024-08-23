@@ -1,0 +1,34 @@
+.collage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .collage-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 150px);
+    gap: 5px;
+  }
+  
+  .grid-cell {
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .placeholder {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .collage-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

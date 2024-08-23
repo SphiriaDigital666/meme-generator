@@ -12,6 +12,7 @@ import MemeGenerator from "./components/Meme-Generator/MemeGenerator";
 import ImageSelector from "./components/Meme-Generator/ImageSelector";
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
+import Collage from "./components/Collage/Collage";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <>Home Page</>,
+    element: <Collage />,
+  },
+  {
+    path: "/collage",
+    element: <Collage />,
   },
   {
     path: "*",
